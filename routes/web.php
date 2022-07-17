@@ -18,13 +18,12 @@ use App\Http\Controllers\ListingController;
 //all listings
 Route::get('/', [ListingController::class, 'index']);
 
+//Show Create form
+Route::get('/listings/create',[ListingController::class, 'create']);
+
+//store listing data
+Route::post('/listings',[ListingController::class, 'store']);
+
+
 //single listing
 Route::get('/listings/{listing}',[ListingController::class, 'show']);
-
-// Route::get('/posts/{id}', function($id) {
-//     return response('Post ' . $id);
-// })->where('id','[0-9]+');
-
-// Route::get('/search', function(Request $request) {
-//     return $request->name." ". $request->city;
-// });
